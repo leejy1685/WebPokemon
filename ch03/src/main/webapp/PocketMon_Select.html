@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>포켓몬 선택창</title>
+<!--CSS파일불러오기-->
+<link rel="stylesheet" type="text/css" href="SelectSytle.css">
+<style>
+	body{
+		background-image: url('PocketMonImg/몬스터볼_투명.png');
+		background-size: cover;
+		}
+	nav{
+         border: 1px solid black;
+         display: flex;
+         flex-direction:column;
+         align-items: center;
+         width: 250px;
+         height: 500px;
+         float: left;
+        }
+        
+	section{
+         width: 60%;
+         float: left;
+         background: white;
+         padding-left:20px;
+         display: grid;
+  		 place-items: center;
+  		 padding-left: 30px;
+    }
+         
+    .send_btn{
+	background-color: #f44336; /* 버튼 배경색 */
+  	color: white; /* 글자색 */
+  	border: none; /* 테두리 제거 */
+  	border-radius: 5px; /* 모서리 둥글게 */
+  	font-weight: bold; /* 글자 굵게 */
+  	cursor: pointer; /* 마우스 오버시 커서 변경 */
+  	transition: background-color 0.3s; /* 클릭시 애니메이션 효과 */
+	}
+
+	.send_btn:hover {
+  	background-color: #d32f2f; /* 마우스 오버시 버튼 배경색 변경 */
+	}
+	
+.table-header {
+  font-family: 'Arial', sans-serif; /* 글꼴 선택 */
+  font-size: 24px; /* 글자 크기 */
+  color: #333; /* 글자 색상 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+  padding: 5px 0; /* 상하 패딩 */
+  background-color: #f3f3f3; /* 배경색 */
+  border-bottom: 2px solid #ccc; /* 테두리 스타일 */
+}
+
+/* 테이블 스타일 */
+.table-style {
+  border-collapse: collapse; /* 테이블 테두리 겹치기 */
+  width: 60%; /* 테이블 너비 전체 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 박스 그림자 */
+}
+
+/* 테이블 셀 스타일 */
+.table-style td {
+  border: 1px solid #ddd; /* 테두리 스타일 */
+  padding: 3px; /* 패딩 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+  margin-left: 10px;
+}
+
+</style>
+</head>
+<body>
+  <nav class="sidebar">
+    <!-- 여기에 설명 텍스트나 다른 내용을 넣을 수 있습니다. -->
+    <p>포켓몬을 3마리를 선택합니다.<br><br> 마우스를 포켓몬 위에 올리면 해당 포켓몬의 체력,공격력,방어력,속성을 확인할 수 있습니다.<br>
+		<br>모두 선택을 완료할 시에는 선택완료 버튼을 통해 배틀을 할 수 있습니다.</p>
+  </nav>
+<header>
+	<table class="table-style">
+		<td class="table-header"> 선택한 포켓몬</td>
+		<td> <button class="Battle_sel_btn" style="width:100px; height:100px" id="myPocket1"> </button> </td>
+		<td> <button class="Battle_sel_btn" style="width:100px; height:100px" id="myPocket2"> </button> </td>
+		<td> <button class="Battle_sel_btn" style="width:100px; height:100px" id="myPocket3"> </button> </td>
+		<td><button class="send_btn" style="width:100px; height:100px" onclick="PostHTML();"> 선택완료 </button></td>
+	</table>
+</header>
+<hr>
+<section>
+<table>
+	<tr>
+		<td><button class="PM_Sel_Btn" value="이상해씨"id="1"style="background-image: url('PocketMonImg/이상해씨.png')";>
+			<span class="tooltip">이상해씨<br>속성: 풀 <br>체력:40 <br>공격력:49 <br> 방어력:49 <br> </span></button></td>
+		<td><button class="PM_Sel_Btn" value="파이리" id="2" style="background-image: url('PocketMonImg/파이리.png')";>
+			<span class="tooltip">파이리<br>속성: 불꽃 <br>체력:39 <br>공격력:52 <br> 방어력:43 <br> </span></button></td>
+		<td><button class="PM_Sel_Btn" value="꼬부기"id="3"style="background-image: url('PocketMonImg/꼬부기.png')";>
+			<span class="tooltip">꼬부기<br>속성: 물 <br>체력:44 <br>공격력:48 <br> 방어력:65 <br> </span></button></td>
+		<td><button class="PM_Sel_Btn" value="피카츄"id="4"style="background-image: url('PocketMonImg/피카츄.png')";>
+			<span class="tooltip">피카츄<br>속성: 전기 <br>체력:35 <br>공격력:35 <br> 방어력:30 <br> </span></button></td>
+		<td><button class="PM_Sel_Btn" value="디그다"id="5"style="background-image: url('PocketMonImg/디그다.png')";>
+			<span class="tooltip">디그다<br>속성: 땅 <br>체력:35 <br>공격력:55 <br> 방어력:30 <br> </span></button></td>
+	</tr>
+	<tr>
+		<td><button class="PM_Sel_Btn" value="나옹"id="6"style="background-image: url('PocketMonImg/나옹.png')";>
+			<span class="tooltip">나옹<br>속성: 노말 <br>체력:40 <br>공격력:45 <br> 방어력:35 <br> </span></button></td>
+		<td><button class="PM_Sel_Btn" value="가디"id="7"style="background-image: url('PocketMonImg/가디.png')";>
+			<span class="tooltip">가디<br>속성: 불꽃 <br>체력:60 <br>공격력:75 <br> 방어력:45 <br> </span></button></td>
+		<td><button class="PM_Sel_Btn" value="발챙이"id="8"style="background-image: url('PocketMonImg/발챙이.png')";>
+			<span class="tooltip">발챙이<br>속성: 물 <br>체력:40 <br>공격력:50 <br> 방어력:40 <br> </span></button></td>
+		<td><button class="PM_Sel_Btn" value="모다피"id="9"style="background-image: url('PocketMonImg/모다피.png')";>
+			<span class="tooltip">모다피<br>속성: 풀 <br>체력:50 <br>공격력:75 <br> 방어력:35 <br> </span></button></td>
+		<td><button class="PM_Sel_Btn" value="꼬마돌"id="10"style="background-image: url('PocketMonImg/꼬마돌.png')";>
+			<span class="tooltip">꼬마돌<br>속성: 땅 <br>체력:40 <br>공격력:80 <br> 방어력:100 <br> </span></button></td>	
+	</tr>
+	<tr>
+		<td><button class="PM_Sel_Btn" value="코일"id="11"style="background-image: url('PocketMonImg/코일.png')";>
+			<span class="tooltip">코일<br>속성: 전기 <br>체력:25 <br>공격력:35 <br> 방어력:70 <br> </span></button></td>
+		<td><button class="PM_Sel_Btn" value="찌리리공"id="12"style="background-image: url('PocketMonImg/찌리리공.png')";>
+			<span class="tooltip">찌리리공<br>속성: 전기 <br>체력:40 <br>공격력:30 <br> 방어력:50 <br> </span></button></td>
+		<td><button class="PM_Sel_Btn" value="럭키"id="13"style="background-image: url('PocketMonImg/럭키.png')";>
+			<span class="tooltip">럭키<br>속성: 노말 <br>체력:250 <br>공격력:5 <br> 방어력:5 <br> </span></button></td>
+		<td><button class="PM_Sel_Btn" value="별가사리"id="14"style="background-image: url('PocketMonImg/별가사리.png')";>
+			<span class="tooltip">별가사리<br>속성: 물 <br>체력:30 <br>공격력:45 <br> 방어력:55 <br> </span></button></td>
+		<td><button class="PM_Sel_Btn" value="뚜벅쵸"id="15"style="background-image: url('PocketMonImg/뚜벅쵸.png')";>
+			<span class="tooltip">뚜벅쵸<br>속성: 풀 <br>체력:45 <br>공격력:50 <br> 방어력:55 <br> </span></button></td>
+	</tr>	
+</table>
+</section>
+<script>
+var selectedPokemons = []; //선택된 포켓몬이 저장될 배열
+
+function addPokemon(pokemonValue) {
+  if (selectedPokemons.length < 3) {
+    selectedPokemons.push(pokemonValue);
+  }
+}
+//aJax로 보내는 방식	
+function PostHTML(){
+	if (selectedPokemons.length != 3) { //3마리가 아닐경우 리턴
+		alert("3마리가 아닙니다.");
+		return;
+	}
+	// 선택된 포켓몬들의 데이터를 params 변수에 저장
+    var params = selectedPokemons.map(function(value, index) {
+        return 'pokemon' + (index + 1) + '=' + encodeURIComponent(value);
+    }).join('&');
+
+    var xmlhttp = new XMLHttpRequest(); // XMLHttpRequest 객체 생성
+
+    // POST 방식으로 Pocketmon_Select.jsp에 요청을 보낸다.
+    xmlhttp.open('POST', 'Pocketmon_Select.jsp', true);
+    xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    
+    xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    window.location.href = 'battle.jsp';
+                }
+            };
+     xmlhttp.send(params);
+}
+
+// 포켓몬 선택 버튼 클릭 이벤트 리스너 설정
+function SelectionButtons() {
+  var buttons = document.querySelectorAll('.PM_Sel_Btn');
+  buttons.forEach(function(button) {
+    button.addEventListener('click', function() {
+		 var pokemonValue = this.value; // 버튼의 value 속성을 읽어옴
+      // 이미 선택되어 있는 경우, 선택 취소
+      if (selectedPokemons.includes(pokemonValue)) {
+        selectedPokemons.splice(selectedPokemons.indexOf(pokemonValue), 1);
+        button.style.border = '';
+        updateHeaderButtons();
+     } else if (selectedPokemons.length < 3) {
+        // 새로 선택
+        addPokemon(pokemonValue); // addPokemon 함수를 호출하여 포켓몬 추가
+        button.style.border = '2px solid red';
+        updateHeaderButtons();
+      }
+    });
+     button.addEventListener('mouseenter', function() {
+      var tooltip = button.querySelector('.tooltip');
+      tooltip.style.display = 'block'; // 툴팁 표시
+    });
+
+    // 마우스가 떠날 때 툴팁 숨김
+    button.addEventListener('mouseleave', function() {
+      var tooltip = button.querySelector('.tooltip');
+      tooltip.style.display = 'none'; // 툴팁 숨김
+    });
+  });
+}
+
+// 헤더 버튼 업데이트
+function updateHeaderButtons() {
+    // 모든 헤더 버튼 초기화
+  for (var i = 1; i <= 3; i++) {
+    var headerButton = document.getElementById('myPocket' + i);
+    headerButton.style.backgroundImage = '';
+    headerButton.innerText = ''; // 텍스트 내용도 초기화
+    var tooltip = headerButton.querySelector('.tooltip');
+    if (tooltip) {
+      headerButton.removeChild(tooltip); // 기존 툴팁 요소 제거
+    }
+  }
+
+  // 선택된 포켓몬에 대한 정보를 헤더 버튼에 설정
+  selectedPokemons.forEach(function(pokemonValue, position) {
+    var pokemonButton = document.querySelector('.PM_Sel_Btn[value="' + pokemonValue + '"]');
+    var headerButton = document.getElementById('myPocket' + (position + 1));
+    headerButton.style.backgroundImage = pokemonButton.style.backgroundImage; //이미지도 복사
+    headerButton.style.backgroundSize = 'cover'; //이미지를 딱맞게
+    headerButton.style.backgroundRepeat = 'no-repeat';
+    headerButton.style.backgroundPosition = 'center'; //위치는 중간
+
+    // 툴팁 정보 설정
+    var tooltipText = pokemonButton.querySelector('.tooltip').innerHTML;
+    var tooltipDiv = document.createElement('div');
+    tooltipDiv.classList.add('tooltip');
+    tooltipDiv.innerHTML = tooltipText;
+    tooltipDiv.style.display = 'none'; // 기본적으로 툴팁 숨김
+    headerButton.appendChild(tooltipDiv);
+
+    // 마우스 오버 시 툴팁 표시
+    headerButton.onmouseenter = function() {
+      tooltipDiv.style.display = 'block';
+    };
+
+    // 마우스 아웃 시 툴팁 숨김
+    headerButton.onmouseleave = function() {
+      tooltipDiv.style.display = 'none';
+    };
+  });
+}
+
+
+// 헤더 버튼 리셋 함수
+function HeaderResetButton(headerButton, selectedButton) {
+   for (var i = 1; i <= 3; i++) {
+    var headerButton = document.getElementById('myPocket' + i);
+    headerButton.addEventListener('click', function() {
+      var position = parseInt(this.id.replace('myPocket', '')) - 1;
+       if (position < selectedPokemons.length) {
+         var pokemonValue = selectedPokemons[position];
+        selectedPokemons.splice(position, 1); // 선택 취소
+        // 바디의 해당 포켓몬 버튼의 테두리 제거
+        var pokemonButton = document.querySelector('.PM_Sel_Btn[value="' + pokemonValue + '"]');
+        if (pokemonButton) {
+          pokemonButton.style.border = '';
+        }
+        updateHeaderButtons(); // 헤더 업데이트 호출
+      }
+    });
+  }
+}
+
+
+SelectionButtons();
+HeaderResetButton();
+
+</script>
+</body>
+</html>

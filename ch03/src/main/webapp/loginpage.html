@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Project Pokemon Login</title>
+	<link rel="stylesheet" href="style/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+<section class="wrapper">
+	<div class="login-form">
+		<h1>Web Pokemon</h1>
+		<form name="login" method="post" action="Userlogin.jsp">
+			<div class="input-area">
+				<input type="text" name="id" id="id" autocomplete="off" required>
+				<label for="id">USER NAME</label>
+			</div>
+			<div class="input-area">
+				<input type="password" name="pw" id="pw" autocomplete="off" required>
+				<label for="pw">PASSWORD</label>
+			</div>
+			<div class="btn-area">
+				<button type="submit" id="btn">LOGIN</button>
+			</div>
+		</form>
+		<div class="result"></div>
+		<div class="login-register">
+			<p>Don't have an account?
+			<a href="#" class="register-link">Register</a></p>
+		</div>
+	</div>
+
+	<div class="register-form">
+		<h1>Web Pokemon</h1>
+		<form name="register" method="post" action="Userregister.jsp">
+			<div class="input-area">
+				<input type="text" name="id" id="id" autocomplete="off" required>
+				<label for="id">USER NAME</label>
+			</div>
+			<div class="input-area">
+				<input type="password" name="pw" id="pw" autocomplete="off" required>
+				<label for="pw">PASS	WORD</label>
+			</div>
+			<div class="btn-area">
+				<button type="submit" id="btn">Register</button>
+			</div>
+		</form>
+		<div class="login-register">
+			<p>Already have an account?
+			<a href="#" class="login-link">Login</a></p>
+		</div>
+	</div>
+	<script>
+      const wrapper = document.querySelector('.wrapper');
+      const loginLink = document.querySelector('.login-link');
+      const registerLink = document.querySelector('.register-link');
+
+      registerLink.addEventListener('click', () => {
+        wrapper.classList.add('active');
+      });
+
+      loginLink.addEventListener('click', () => {
+        wrapper.classList.remove('active');
+      });
+    </script>
+</section>
+</body>
+</html>

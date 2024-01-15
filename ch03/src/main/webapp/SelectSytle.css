@@ -1,0 +1,110 @@
+@charset "UTF-8";
+.PM_Sel_Btn{ 
+		width:150px; 
+		height:150px;
+	 	background-color: lightcyan; /* 녹색 배경 */
+    	color: white; /* 흰색 텍스트 */
+    	padding: 0; /*패딩제거*/
+    	text-align: center; /* 텍스트 가운데 정렬 */
+    	text-decoration: none; /* 텍스트 밑줄 제거 */
+    	display: inline-block; /* 인라인 블록으로 표시 */
+    	background-size: 100% 100%;
+    	font-size: 16px; /* 글자 크기 */
+    	margin: 4px 2px; /* 마진 */
+    	cursor: pointer; /* 마우스 오버 시 커서 변경 */
+    	border: 1; /* 테두리 없음 */
+    	border-radius: 8px; /* 모서리 둥글게 */
+    	box-shadow: 0 4px #999; /* 박스 그림자 */
+    	z-index: 1; /* 다른 요소 위에 표시 */
+    	white-space: normal;
+    	position: relative;
+		}
+
+/*밑에 버튼에 대한 툴팁*/
+.PM_Sel_Btn .tooltip {
+  	display: none; /* 버튼에 마우스를 올리면 툴팁을 표시합니다. */
+  	position: absolute;
+  	z-index:100;
+  	pointer-events: none; /* 툴팁이 마우스 이벤트를 방해하지 않도록 설정 */
+	}
+.PM_Sel_Btn:hover .tooltip {
+    display: block; /* 버튼에 마우스를 올렸을 때 툴팁을 표시합니다. */
+}
+	
+/*버튼 마우스 오버시 효과*/
+.PM_Sel_Btn:hover { 
+    	display: block; /* 버튼에 마우스를 올리면 툴팁을 표시합니다. */
+    	z-index:100;
+  	}
+
+/*버튼 클릭할때 효과*/
+.PM_Sel_Btn:active {
+    	background-color: dodgerblue; /* 클릭 시 더 어두운 녹색으로 변경 */
+    	box-shadow: 0 2px #666; /* 클릭 시 그림자 변경 */
+    	transform: translateY(4px); /* 클릭 시 살짝 아래로 내려가는 효과 */
+  	}
+  	
+ /*정보창 꾸미기*/
+.tooltip {
+    	display: none;
+    	position: absolute;
+    	bottom: 50%;
+    	width: 120px;
+    	background-color: black;
+    	color: white;
+    	text-align: center;
+    	padding: 5px;
+    	border-radius: 6px;
+    	pointer-events:none;
+    	z-index:100;
+  	}
+  
+.Battle_sel_btn {
+  position: relative; /* 헤더 버튼을 상대 위치로 설정 */
+  background-color: aliceblue;
+  /* 기타 스타일링 */
+}
+
+.Battle_sel_btn .tooltip {
+  position: absolute; /* 툴팁을 절대 위치로 설정 */
+  bottom: -10%; /* 버튼의 상단 가장자리 바로 위에 툴팁이 오도록 설정 */
+  left: 50%; /* 버튼의 가운데에 툴팁이 오도록 설정 */
+  display: none; /* 기본적으로 툴팁 숨김 */
+}
+
+.table-header {
+  font-family: 'Arial', sans-serif; /* 글꼴 선택 */
+  font-size: 24px; /* 글자 크기 */
+  color: #333; /* 글자 색상 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+  padding: 10px 0; /* 상하 패딩 */
+  background-color: #f3f3f3; /* 배경색 */
+  border-bottom: 2px solid #ccc; /* 테두리 스타일 */
+}
+
+/* 테이블 스타일 */
+.table-style {
+  border-collapse: collapse; /* 테이블 테두리 겹치기 */
+  width: 100%; /* 테이블 너비 전체 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 박스 그림자 */
+}
+
+/* 테이블 셀 스타일 */
+.table-style td {
+  border: 1px solid #ddd; /* 테두리 스타일 */
+  padding: 8px; /* 패딩 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+
+.sidebar{
+	width:300;
+	height:1000;
+	align:left;
+}
+  
+  
+  
+  
+  
+  
